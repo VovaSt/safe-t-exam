@@ -1,0 +1,14 @@
+.wrapper {
+  background: #e5e5e5;
+  height: 100%;
+  display: flex;
+
+  .content {
+    width: 100%;
+    margin: 49px auto 0;
+    height: calc(100% - 49px);
+    max-width: 1538px;
+    border: 1px solid #d5d9de;
+    background: #ffffff;
+  }
+}

@@ -1,0 +1,21 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  .logo-block {
+    padding: 27px 10px;
+    margin: 0 17px;
+    border-bottom: 1px #cbd4db solid;
+
+    .logo {
+      width: 93px;
+      height: 29px;
+    }
+  }
+
+  .menu-tree {
+    .tree-invisible {
+      display: hidden;
+    }
+  }
+}
