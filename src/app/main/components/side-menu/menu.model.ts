@@ -15,19 +15,16 @@ export const MenuMap: MenuItem[] = [
         name: 'Services',
         image: './../../../../assets/icons/Services.svg',
         link: '/services',
-        children: []
       },
       {
         name: 'Ports',
         image: './../../../../assets/icons/Ports.svg',
         link: '/ports',
-        children: []
       },
       {
         name: 'Cluster',
         image: './../../../../assets/icons/Cluster.svg',
         link: '/cluster',
-        children: []
       },
     ]
   },
@@ -45,19 +42,16 @@ export const MenuMap: MenuItem[] = [
         name: 'Policies',
         image: './../../../../assets/icons/Policies.svg',
         link: '/policies',
-        children: []
       },
       {
         name: 'Connectors',
         image: './../../../../assets/icons/Connectors.svg',
         link: '/connectors',
-        children: []
       },
       {
         name: 'Authetication steps',
         image: './../../../../assets/icons/AutheticationSteps.svg',
         link: '/authetication_steps',
-        children: []
       },
     ]
   },
@@ -75,19 +69,16 @@ export const MenuMap: MenuItem[] = [
         name: 'Audit',
         image: './../../../../assets/icons/Audit.svg',
         link: '/audit',
-        children: []
       },
       {
         name: 'User activity',
         image: './../../../../assets/icons/UserActivity.svg',
         link: '/user_activity',
-        children: []
       },
       {
         name: 'Logs',
         image: './../../../../assets/icons/Logs.svg',
         link: '/logs',
-        children: []
       },
     ]
   },
@@ -99,31 +90,26 @@ export const MenuMap: MenuItem[] = [
         name: 'General',
         image: './../../../../assets/icons/General.svg',
         link: '/general',
-        children: []
       },
       {
         name: 'License',
         image: './../../../../assets/icons/License.svg',
         link: '/license',
-        children: []
       },
       {
         name: 'Web SSL',
         image: './../../../../assets/icons/WebSSL.svg',
         link: '/web_SSL',
-        children: []
       },
       {
         name: 'User managment',
         image: './../../../../assets/icons/UserManagment.svg',
         link: '/user_managment',
-        children: []
       },
       {
         name: 'EULA',
         image: './../../../../assets/icons/EULA.svg',
         link: '/EULA',
-        children: []
       },
     ]
   },

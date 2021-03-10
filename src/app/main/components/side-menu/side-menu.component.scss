@@ -1,8 +1,9 @@
 .wrapper {
   display: flex;
   flex-direction: column;
+  height: 100%;
 
-  .logo-block {
+  .header-block {
     padding: 27px 10px;
     margin: 0 17px;
     border-bottom: 1px #cbd4db solid;
@@ -11,11 +12,164 @@
       width: 93px;
       height: 29px;
     }
+
+    .button {
+      width: 40px;
+      height: 40px;
+      margin: 0 auto;
+      display: none;
+    }
+
+    &.folded {
+      margin: 0;
+
+      .logo {
+        display: none;
+      }
+
+      .button {
+        display: block;
+      }
+    }
   }
 
   .menu-tree {
+    overflow: scroll;
+    width: calc(100% + 10px);
+    background: transparent;
+
+    .mat-tree-node {
+      width: 250px;
+      height: 38px;
+      min-height: 38px;
+      position: relative;
+      cursor: pointer;
+
+      .mark {
+        height: 100%;
+        width: 20px;
+        border-radius: 10px;
+        background: #ffffff;
+        position: absolute;
+        left: -10px;
+      }
+
+      .select-container {
+        height: 100%;
+        flex: 1;
+        display: flex;
+        margin-left: 48px;
+        align-items: center;
+        user-select: none;
+
+        .icon-arrow {
+          padding-right: 4px;
+        }
+
+        .icon {
+          height: 27px;
+          width: 27px;
+        }
+
+        .name {
+          flex: 1;
+          color: #434d59;
+          font-size: 16px;
+          line-height: 22px;
+          letter-spacing: 0.2px;
+          font-weight: 500;
+          padding: 0 7px;
+        }
+
+        .selected-arrow {
+          width: 8px;
+          height: 12px;
+          display: none;
+        }
+      }
+
+      &.selected {
+        .mark {
+          background: #feae1b;
+        }
+
+        .select-container {
+          position: relative;
+
+          &::before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: calc(100% + 20px);
+            border-radius: 10px;
+            left: -10px;
+            background: #1a242d;
+          }
+
+          .icon {
+            z-index: 1;
+          }
+
+          .name {
+            color: #ffffff;
+            z-index: 1;
+          }
+
+          .selected-arrow {
+            display: block;
+            z-index: 1;
+          }
+        }
+      }
+
+      &.parent {
+        .select-container {
+          margin-left: 16px;
+        }
+      }
+
+      &.empty-parent {
+        .select-container {
+          margin-left: 29px;
+        }
+      }
+    }
+
+    &.folded {
+      .mat-tree-node {
+        width: 82px;
+
+        .select-container {
+          margin-left: 29px;
+
+          .name {
+            display: none;
+          }
+        }
+
+        &.selected .select-container {
+          justify-content: space-between;
+        }
+
+        &.parent {
+          .select-container {
+            margin-left: 16px;
+          }
+        }
+      }
+    }
+
+    &.compact {
+      display: none;
+    }
+
     .tree-invisible {
-      display: hidden;
+      height: 0px;
+      overflow: hidden;
     }
   }
+}
+
+::-webkit-scrollbar {
+  width: 0px;
 }

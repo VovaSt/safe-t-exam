@@ -1,11 +1,16 @@
 <div class="wrapper">
-  <mat-drawer-container autosize>
+  <div class="mobile-btn-menu" *ngIf="compactView$ | async" (click)=fold$.next(false)>
+    <img src="../../../../assets/icons/UnfoldButton.svg">
+  </div>
 
-    <mat-drawer #drawer class="side-menu" mode="side" opened="true">
-      <app-side-menu></app-side-menu>
-    </mat-drawer>
+  <mat-sidenav-container>
+    <mat-sidenav class="side-menu" mode="side" [opened]="!(compactView$ | async)">
+      <app-side-menu [fold$]="fold$" (compactView)="compactView$.next($event)"></app-side-menu>
+    </mat-sidenav>
 
-    <router-outlet></router-outlet>
+    <mat-sidenav-content (click)="fold$.next(true)">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
 
-  </mat-drawer-container>
+  </mat-sidenav-container>
 </div>

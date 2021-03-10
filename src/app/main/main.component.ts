@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-main',
@@ -7,11 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  showFiller = false;
+  compactSize = 425;
+
+  fold$: Subject<boolean> = new Subject<boolean>();
+  compactView$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(window.innerWidth < this.compactSize);
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void { }
 }
